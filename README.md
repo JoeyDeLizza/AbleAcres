@@ -1,7 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Running the application
+
+### Build the docker image
+```
+docker build -t test
+```
+
+### Running the containerized web app
+```
+docker run -p 3000:3000 test
+```
+
 
 Things you may want to cover:
 
