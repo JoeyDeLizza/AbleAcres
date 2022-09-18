@@ -11,5 +11,5 @@ RUN ls
 
 EXPOSE 3000
 RUN ./bin/bundle install
-# launches the web app
+# launch the web app
 CMD ["rails", "server", "-b", "0.0.0.0"]
