@@ -11,6 +11,7 @@ docker build -t test
 ```
 docker run -p 3000:3000 test
 ```
+Check if its running: <https://localhost:3000>
 
 
 Things you may want to cover:
