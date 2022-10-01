@@ -4,7 +4,7 @@
 
 ### Build the docker image
 ```
-docker build -t test
+docker build . -t test
 ```
 
 ### Running the containerized web app
