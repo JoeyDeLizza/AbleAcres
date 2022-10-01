@@ -6,9 +6,11 @@ RUN dnf update -y
 RUN dnf group install "C Development Tools and Libraries" -y
 RUN dnf install ruby-devel zlib-devel sqlite -y
 RUN gem install rails
-#COPY . .
+COPY . .
 
 EXPOSE 3000
 RUN /bin/bundle install
 # launch the web app
-CMD ["rails", "server", "-b", "-d", "0.0.0.0"]
+
+#starts server automatically, leave commented while developing
+#CMD ["rails", "server", "-b", "0.0.0.0"]
