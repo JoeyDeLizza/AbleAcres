@@ -11,6 +11,7 @@ COPY . .
 EXPOSE 3000
 RUN bin/bundle install
 RUN umask 000
+RUN bin/rake assets:precompile
 # launch the web app
 
 #starts server automatically, leave commented while developing
