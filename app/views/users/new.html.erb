@@ -1,0 +1,13 @@
+<div>
+  <% if flash[:error] %>
+  <%= content_tag :h1, flash[:error] %>
+  <% else %>
+  <%= content_tag :h1, "Please Sign Up" %>
+  <% end %>
+  <%= form_for @user do |f| %>
+  <%= f.text_field :email %><br>
+  <%= f.password_field :password %><br>
+  <%= link_to "Log in", new_session_path %>
+  <%= f.submit "Sign Up!" %>
+  <% end %>
+</div>

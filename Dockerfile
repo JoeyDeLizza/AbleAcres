@@ -1,5 +1,5 @@
 FROM fedora:36
-WORKDIR /app
+WORKDIR /home/app
 
 # install dependencies
 RUN dnf update -y
@@ -9,7 +9,8 @@ RUN gem install rails
 COPY . .
 
 EXPOSE 3000
-RUN /bin/bundle install
+RUN bin/bundle install
+RUN umask 000
 # launch the web app
 
 #starts server automatically, leave commented while developing
