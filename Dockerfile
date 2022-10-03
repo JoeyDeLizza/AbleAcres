@@ -12,6 +12,7 @@ EXPOSE 3000
 RUN bin/bundle install
 RUN umask 000
 RUN bin/rake assets:precompile
+RUN bin/rails db:migrate
 # launch the web app
 
 #starts server automatically, leave commented while developing

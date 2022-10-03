@@ -15,6 +15,7 @@ docker run -p 3000:3000 test -it -v $(pwd):/home/app
 ### Starting the server 
 ```
 In the docker container execute
+[root@2313sfd1]# bin/rails db:migrate
 [root@2313sfd1]# bin/rails -b 0.0.0.0
 ```
 Check if its running: <http://localhost:3000>
