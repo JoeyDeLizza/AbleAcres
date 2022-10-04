@@ -9,7 +9,8 @@ docker build . -t test
 
 ### Running the containerized web app
 ```
-docker run -p 3000:3000 test -it -v $(pwd):/home/app
+                  Windows use: ${PWD}
+docker run -p 3000:3000 -it -v $(pwd):/home/app test
 ```
 
 ### Starting the server 
