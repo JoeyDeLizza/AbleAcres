@@ -14,7 +14,7 @@ docker pull joeydelizza/able:latest
 docker run -p 3000:3000 -it -v $(pwd):/home/app joeydelizza/able
 ```
 
-### Initialize rails app (Run this once inside container after building docker imager)
+### Initialize rails app (Run this once inside container)
 ```
 /init.sh
 ```
