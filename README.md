@@ -13,10 +13,14 @@ docker build . -t test
 docker run -p 3000:3000 -it -v $(pwd):/home/app test
 ```
 
+### Initialize rails app (Run this once after building docker imager)
+```
+/init.sh
+```
+
 ### Starting the server 
 ```
 In the docker container execute
-[root@2313sfd1]# bin/rails db:migrate
 [root@2313sfd1]# bin/rails server -b 0.0.0.0
 ```
 Check if its running: <http://localhost:3000>
