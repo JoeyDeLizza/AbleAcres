@@ -13,7 +13,7 @@ docker build . -t test
 docker run -p 3000:3000 -it -v $(pwd):/home/app test
 ```
 
-### Initialize rails app (Run this once after building docker imager)
+### Initialize rails app (Run this once inside container after building docker imager)
 ```
 /init.sh
 ```
