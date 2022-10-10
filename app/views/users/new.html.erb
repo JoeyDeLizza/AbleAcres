@@ -5,7 +5,9 @@
   <%= content_tag :h1, "Please Sign Up" %>
   <% end %>
   <%= form_for @user do |f| %>
+  <div class="block"> <%= f.label :email, "Email: "%> </div>
   <%= f.text_field :email %><br>
+  <div class="block"> <%= f.label :password, "Password: "%> </div>
   <%= f.password_field :password %><br>
   <%= link_to "Log in", new_session_path %>
   <%= f.submit "Sign Up!" %>
