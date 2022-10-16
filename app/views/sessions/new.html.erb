@@ -1,15 +1,37 @@
-<div>
-  <% if flash[:notice] %>
-  <%= content_tag :h1, flash[:notice] %>
-  <% else %>
-  <%= content_tag :h1, "Please Log in" %>
-  <% end %>
-  <%= form_with url: sessions_path do |f| %>
- <div class="block"> <%= f.label :email, "Email: "%> </div>
-  <%= f.text_field :email %><br>
- <div class="block"> <%= f.label :password, "Password: "%> </div>
-  <%= f.password_field :password %><br>
-  <%= link_to "Sign Up", new_user_path %>
-  <%= f.submit "Sign In!" %>
-  <% end %>
+<div class="w-full h-screen md:mb-12 md:h-min md:w-1/2 lg:w-1/3 bg-white grid rounded border border-gray-700">
+    <div class="m-3">
+	<% if flash[:notice] %>
+	    <%= content_tag :h1, flash[:notice] %>
+	<% else %>
+	    <%= content_tag :h1, "Please Log in", class: "text-sky-400" %>
+	<% end %>
+	<%= form_with url: sessions_path, html: {class: "w-full maxw-lg"} do |f| %>
+	    <div class="flex flex-wrap -mx-3 mb-6">
+		<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+		    <div class="flex flex-wrap -mx-3 mb-6">
+			<div class="w-full px-3">
+			    <%= f.label :email, "Email:", class: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"%>
+			    <%= f.text_field :email,  class: "appearance-none block w-full bg-gray-200 text-gray-700 border-0 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"%>
+			</div>
+		    </div>
+		    <div class="flex flex-wrap -mx-3 mb-6">
+			<div class="w-full px-3">
+			    <%= f.label :password, "Password:", class: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"%>
+			    <%= f.password_field :password, class: "appearance-none block w-full bg-gray-200 text-gray-700 border-0 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" %>
+			</div>
+		    </div>
+			    <%= link_to "Sign Up", new_user_path %>
+			    <%= f.submit "Sign In!" %>
+	<% end %>
+		</div>
+	    </div>
+    </div>
 </div>
+	
+
+
+
+
+
+
+

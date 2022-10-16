@@ -16,6 +16,8 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.valid?
       session[:user_id] = @user.id
+      puts session[:user_id]
+      puts @user.id
       redirect_to users_path
     else
       flash[:error] = "Error- please try to create an account again."
@@ -23,8 +25,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def accountmenu
+    redirect_to request.path
+  end
+
   private 
   def user_params
-    params.require(:user).permit(:email, :password)
+    params.require(:user).permit(:email, :password, :FirstName, :LastName)
   end
 end

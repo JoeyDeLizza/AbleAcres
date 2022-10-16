@@ -12,8 +12,11 @@
 
 ActiveRecord::Schema[7.0].define(version: 2022_10_02_230713) do
   create_table "users", force: :cascade do |t|
+    t.string "FirstName"
+    t.string "LastName"
     t.string "email"
     t.string "password_digest"
+    t.boolean "admin", default: false
   end
 
 end
