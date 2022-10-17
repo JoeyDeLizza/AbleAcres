@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "/menu/toggleoff", to: "menu#toggleoff"
   get "/sessions/destroy", to: "sessions#destroy"
   get "/store", to: "store#index"
+  get "/", to: "store#index"
   # Defines the root path route ("/")
   # root "articles#index"
 end
