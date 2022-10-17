@@ -25,6 +25,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def admin
+    @user = current_user
+    if @user.admin == true
+      render admin_path
+    else
+      redirect_to store_path
+    end
+  end
+
   def accountmenu
     redirect_to request.path
   end
