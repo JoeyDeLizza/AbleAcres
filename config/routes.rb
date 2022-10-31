@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get "/store", to: "store#index"
   get "/", to: "store#index"
   get "/admin", to: "admin#index"
+  get "/about", to: "about#index"
+  get "/gallery", to: "gallery#index"
   # Defines the root path route ("/")
   # root "articles#index"
 end
