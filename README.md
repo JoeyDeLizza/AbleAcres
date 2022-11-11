@@ -21,7 +21,7 @@ docker run -p 3000:3000 -it -v $(pwd):/home/app joeydelizza/able
 
 ## Starting the server 
 
-### Starting the server dor development and testing
+### Starting the server for development and testing
 Run this command in the container
 ```
 bin/dev
