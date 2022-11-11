@@ -19,10 +19,18 @@ docker run -p 3000:3000 -it -v $(pwd):/home/app joeydelizza/able
 /init.sh
 ```
 
-### Starting the server 
+## Starting the server 
+
+### Starting the server dor development and testing
+Run this command in the container
 ```
-In the docker container execute
-[root@2313sfd1]# bin/rails server -b 0.0.0.0
+bin/dev
+```
+
+Run this command in the container
+### Starting the server in production
+```
+bin/rails server -b 0.0.0.0
 ```
 Check if its running: <http://localhost:3000>
 
