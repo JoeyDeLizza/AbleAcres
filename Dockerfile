@@ -3,13 +3,16 @@ WORKDIR /home/app
 
 # install dependencies
 RUN dnf update -y
+RUN sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
+RUN sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 RUN dnf group install "C Development Tools and Libraries" -y
-RUN dnf install ruby-devel zlib-devel sqlite dos2unix -y
+RUN dnf install ruby-devel zlib-devel sqlite dos2unix vips ffmpeg  -y
 RUN gem install rails
 
 # Create init script
 RUN echo '#!/bin/sh' > /init.sh
 RUN echo 'cd /home/app' >> /init.sh
+RUN echo 'find . -type f -exec dos2unix {} \;' >> /init.sh
 RUN echo 'bin/bundle install' >> /init.sh
 RUN echo 'bin/rails db:migrate' >> /init.sh
 RUN echo './bin/bundle add tailwindcss-rails' >> /init.sh
