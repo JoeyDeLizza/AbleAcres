@@ -1,8 +1,14 @@
 <div class="h-full w-full">
-    <h1> Email: 
-	<%= @user.email %>
+    <h1 style="font-size: 20px"> <b>First Name:</b>
+	<span style="color: #9a41d1"> <%= @user.FirstName %> </span>
     </h1>
-    <h1 class="break-all"> Encrypted Password: <%= @user.password_digest %>
-
+    <h1 style="font-size: 20px"> <b>Last Name:</b> 
+	<span style="color: #9a41d1"> <%= @user.LastName %> </span>
+    </h1>
+    <h1 style="font-size: 20px"> <b>Email:</b> 
+	<span style="color: #9a41d1"> <%= @user.email %> </span>
+    </h1>
+    <h1 class="break-all", style="font-size: 20px"> <b>Encrypted Password:</b>
+    <span style="color: #9a41d1"> <%= @user.password_digest %> </span>
     </h1>
 </div>
