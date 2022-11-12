@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @producst = Product.all
+    @products = Product.all
   end
   
   def create
