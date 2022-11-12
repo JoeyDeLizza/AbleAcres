@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  get 'products/create'
   resources :sessions, :only => [:new, :create, :destroy]
   resources :users
+  resources :products
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   get "/hello", to: "hello#index"
   get "/menu/toggleon", to: "menu#toggleon"
