@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'products/create'
   resources :sessions, :only => [:new, :create, :destroy]
   resources :users
   resources :products
