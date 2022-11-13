@@ -14,4 +14,12 @@ class ApplicationController < ActionController::Base
     !current_user.nil?
   end
   helper_method :logged_in?
+
+  
+  private
+  def redirect_if_success(default_ur)
+    redirect_to params[:to] || default_url
+    # or similar logic
+  end
+
 end

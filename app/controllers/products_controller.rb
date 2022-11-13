@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  skip_before_action :require_login, only: [:index]
   def new
     @user = current_user
     if @user.admin == true
