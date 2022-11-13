@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   #get "/menu/togglemobilemenuon", to: "menu#togglemobilemenuon"
   get "/menu/toggleoff", to: "menu#toggleoff"
   get "/sessions/destroy", to: "sessions#destroy"
-  get "/store", to: "store#index"
+  get "/store", to: "products#index"
   get "/", to: "store#index"
   get "/admin", to: "admin#index"
   get "/about", to: "about#index"
