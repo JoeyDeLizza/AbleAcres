@@ -1,0 +1,7 @@
+<div>
+    <%= form_for @picture, html: {class: "w-full maxw-lg"} do |f| %>
+        <%= f.label :image %>
+        <%= f.file_field :image %>
+        <%= f.submit "Submit", class: "btn btn-large btn-primary" %>
+    <% end %>
+</div>

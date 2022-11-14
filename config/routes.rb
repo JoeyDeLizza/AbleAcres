@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :sessions, :only => [:new, :create, :destroy]
   resources :users
   resources :products
+  resources :pictures
+  resources :admins
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   get "/hello", to: "hello#index"
   get "/menu/toggleon", to: "menu#toggleon"
@@ -11,9 +13,9 @@ Rails.application.routes.draw do
   get "/sessions/destroy", to: "sessions#destroy"
   get "/store", to: "products#index"
   get "/", to: "store#index"
-  get "/admins", to: "admins#index"
+  get "/admin", to: "pictures#new"
   get "/about", to: "about#index"
-  get "/gallery", to: "gallery#index"
+  get "/gallery", to: "pictures#index"
   # Defines the root path route ("/")
   # root "articles#index"
 end
