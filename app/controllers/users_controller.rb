@@ -6,10 +6,6 @@ class UsersController < ApplicationController
 
   def index
     @user = User.find(session[:user_id])
-    if @user.admin == true
-      redirect_to admin_path
-    end
-
   end
 
   def new
