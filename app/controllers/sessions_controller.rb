@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       if @user.admin == true
         puts "Here"
-        redirect_to store_path
+        redirect_to admins_path
       else
         redirect_to store_path
       end
