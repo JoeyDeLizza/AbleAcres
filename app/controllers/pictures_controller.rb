@@ -1,4 +1,5 @@
 class PicturesController < ApplicationController
+    skip_before_action :require_login, only: [:index]
     def new
         @picture = Picture.new
     end
