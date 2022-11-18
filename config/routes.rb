@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   get "/sessions/destroy", to: "sessions#destroy"
   get "/store", to: "products#index"
   get "/", to: "store#index"
-  get "/admins", to: "pictures#new"
+  get "/admin", to: "admin#index"
+  get "/admin/upload", to: "pictures#new"
   get "/about", to: "about#index"
   get "/gallery", to: "pictures#index"
   # Defines the root path route ("/")
