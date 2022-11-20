@@ -38,6 +38,11 @@ class UsersController < ApplicationController
     redirect_to request.path
   end
 
+  def current_user
+    @user = User.find(session[:user_id])
+  end
+  helper_method :current_user
+
   private 
   def user_params
     params.require(:user).permit(:email, :password, :FirstName, :LastName)
