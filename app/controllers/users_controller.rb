@@ -38,10 +38,28 @@ class UsersController < ApplicationController
     redirect_to request.path
   end
 
+<<<<<<< Updated upstream
   def current_user
     @user = User.find(session[:user_id])
   end
   helper_method :current_user
+=======
+
+  
+  def update
+    @user = User.create(user_params)
+    if @user.valid?
+      session[:user_id] = @user.id
+      puts session[:user_id]
+      puts @user.id
+      current_user.FirstName=user.FirstName
+      redirect_to users_path
+    else
+      flash[:error] = "Error- please try to edit account again."
+      redirect_to new_user_path
+    end
+  end
+>>>>>>> Stashed changes
 
   private 
   def user_params

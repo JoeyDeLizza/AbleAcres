@@ -1,3 +1,5 @@
+<% @user = @user %>
+
 <div class="h-full w-full">
     <h1 style="font-size: 20px"> <b>First Name:</b>
 	<span style="color: #9a41d1"> <%= @user.FirstName %> </span>
@@ -11,4 +13,7 @@
     <h1 class="break-all", style="font-size: 20px"> <b>Encrypted Password:</b>
     <span style="color: #9a41d1"> <%= @user.password_digest %> </span>
     </h1>
+</div>
+<div class="h-full w-full">
+    <%= link_to "Edit Account Details", edit_user_path(current_user)%>
 </div>
