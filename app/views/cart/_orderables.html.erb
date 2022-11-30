@@ -1,0 +1,46 @@
+<div class="container mx-auto mt-10">
+    <div class="flex shadow-md my-10">
+      <div class="w-3/4 bg-white px-10 py-10 content-center">
+        <div class="flex justify-between border-b pb-8">
+          <h2 class="font-semibold text-2xl">Total Cost: $<%= @cart.total %></h2>
+          <a href="#" class="rounded-full bg-green-200 px-2 py-2">Checkout</a>
+        </div>
+        <div class="flex mt-10 mb-5">
+          <h3 class="font-semibold text-gray-600 text-xs uppercase w-2/5">Product Details</h3>
+          <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Quantity</h3>
+          <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Price</h3>
+          <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Total</h3>
+        </div>
+        <% @cart.orderables.each do |orderable| %>
+          <% product = orderable.product %>
+          <div id="<%= "cart-#{product.id}" %>">
+            <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
+              <div class="flex w-2/5"> 
+                <div class="w-20">
+                  <%= link_to image_tag(product.pic, style:"width:100px; height:100px"), class: "w-full"  %>
+                </div>
+                <div class="flex flex-col justify-between ml-4 flex-grow">
+                  <span class="font-bold text-sm"><%=product.name%></span>
+                  <span class="text-red-500 text-xs"><%=product.desc%></span>
+                  <%= form_with(url: cart_remove_path) do |f| %>
+                    <%= f.hidden_field :id, value: orderable.id %>
+                    <%= f.submit "Remove", class: "rounded-full bg-red-200 px-1 py-1" %>
+                  <% end %>
+                </div>
+              </div>
+              <div class="flex justify-center w-1/5">
+
+                <%= form_with(url: cart_add_path) do |f| %>
+                  <%= f.hidden_field :id, value: product.id %>
+                  <%= f.number_field :quantity, value: orderable.quantity, min: 0, max: 10 %>
+                  <%= f.submit "edit", class: "rounded-full bg-blue-200 px-3 py-3" %>
+                <% end %>
+
+              </div>
+              <span class="text-center w-1/5 font-semibold text-sm">$<%=product.price%></span>
+              <span class="text-center w-1/5 font-semibold text-sm">$<%=orderable.total%></span>
+            </div>
+        <% end %>
+      </div>
+    </div>
+</div>

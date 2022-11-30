@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   get "/admin/upload", to: "pictures#new"
   get "/about", to: "about#index"
   get "/gallery", to: "pictures#index"
+  get "/cart", to: "cart#show"
+  post "cart/add"
+  post "cart/remove"
   # Defines the root path route ("/")
   # root "articles#index"
 end
