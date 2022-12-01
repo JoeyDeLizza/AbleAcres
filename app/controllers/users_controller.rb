@@ -45,20 +45,14 @@ class UsersController < ApplicationController
   helper_method :current_user
 
 
-  
   def update
-    @current_user = User.create(params.require(:user).permit(:FirstName, :LastName))
-    if @current_user.valid?
-      session[:user_id] = @user.id
-      puts session[:user_id]
-      puts @user.id
-      current_user.FirstName=user.FirstName
-      current_user.LastName=user.LastName
-      redirect_to users_path
-    else
-      flash[:error] = "Error- please try to edit account again."
-      redirect_to edit_user_path
-    end
+    @current_user = current_user
+    @user_params = params[:user]
+    @current_user.FirstName = @user_params[:FirstName]
+    @current_user.save
+    puts @current_user.valid?
+
+    redirect_to users_path
   end
 
   def edit
