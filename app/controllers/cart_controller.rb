@@ -19,6 +19,11 @@ class CartController < ApplicationController
 
   def remove
     Orderable.find_by(id: params[:id]).destroy
-    
+    redirect_to "/cart"
+  end
+
+  def update
+    add
+    redirect_to "/cart"
   end
 end
