@@ -38,13 +38,6 @@ class UsersController < ApplicationController
     redirect_to request.path
   end
 
-
-  def current_user
-    @user = User.find(session[:user_id])
-  end
-  helper_method :current_user
-
-
   def update
     @current_user = current_user
     @user_params = params[:user]
@@ -56,7 +49,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @current_user = current_user
+    @user = current_user
   end
 
 
