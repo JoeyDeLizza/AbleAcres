@@ -36,6 +36,8 @@ class CartController < ApplicationController
     total = @cart.total
     total = total.to_i
     email = current_user.email
+    path = 'https://cdn-icons-png.flaticon.com/512/2548/2548670.png'
+    puts path
 
     session = Stripe::Checkout::Session.create({
     line_items: [{
@@ -43,7 +45,8 @@ class CartController < ApplicationController
                    price_data: {
                      currency: "usd",
                      product_data: {
-                       name: "Order"},
+                       name: "Order",
+                       images: [path]},
                      unit_amount: total*100},
                    quantity: 1
                  }],
