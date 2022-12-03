@@ -1,39 +1,41 @@
-<div class="p-30 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-5 place-items-center">
+<div class="mx-4 my-4">
+    <div class="p-30 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-5 place-items-center">
 
-    <% @products.each do |product| %>
-	<% if product.pic.attached? %>
-	    <div p-20>
+	<% @products.each do |product| %>
+	    <% if product.pic.attached? %>
+		<div p-20>
 
-		<div class="rounded overflow-hidden shadow-lg max-w-s ">
-		    <%=image_tag url_for(product.pic), style:"width:300px; height:300px", class: "w-full", alt: "beefpatty" %>
-		    <div class="px-6 py-4">
-			<div class="font-bold text-xl mb-2"> <%= product.name %></div>
-			<p class="text-gray-700 text-base">
-			    <%= product.desc %>
-			</p>
-		    </div>
-		    <div>
-			<div class="px-6 pt-4 pb-2 flex justify-between">
-			    <div class="inline-block bg-gray-200 rounded-full px-3 py-1 text-md font-semibold text-gray-700 mr-2 mb-2"><div class="my-2"><%= number_to_currency(product.price, :precision => 2) %></div></div>
-			    <%= form_with(url: cart_add_path) do |f|%>
-				<div class ="flex flex-row-reverse gap-2">
-
-				    <%= f.submit "Add", class: "rounded-full bg-gray-200 hover:bg-blue-200 px-3 py-3" %>
-				    
-				    <%= f.hidden_field :id, value: product.id %>
-				    <%= f.number_field :quantity, value: 1, min: 1, max: 10, class: "w-1/3" %>
-			    <% end %>
-			    	</div>
-
+		    <div class="rounded overflow-hidden shadow-lg max-w-s ">
+			<%=image_tag url_for(product.pic), style:"width:300px; height:300px", class: "w-full", alt: "beefpatty" %>
+			<div class="px-6 py-4">
+			    <div class="font-bold text-xl mb-2"> <%= product.name %></div>
+			    <p class="text-gray-700 text-base">
+				<%= product.desc %>
+			    </p>
 			</div>
+			<div>
+			    <div class="px-6 pt-4 pb-2 flex justify-between">
+				<div class="inline-block bg-gray-200 rounded-full px-3 py-1 text-md font-semibold text-gray-700 mr-2 mb-2"><div class="my-2"><%= number_to_currency(product.price, :precision => 2) %></div></div>
+				<%= form_with(url: cart_add_path) do |f|%>
+				    <div class ="flex flex-row-reverse gap-2">
+
+					<%= f.submit "Add", class: "rounded-full bg-gray-200 hover:bg-blue-200 px-3 py-3" %>
+					
+					<%= f.hidden_field :id, value: product.id %>
+					<%= f.number_field :quantity, value: 1, min: 1, max: 10, class: "w-1/3" %>
+				<% end %>
+			    	    </div>
+
+			    </div>
+			</div>
+
 		    </div>
-
 		</div>
-	    </div>
+	    <% end %>
 	<% end %>
-    <% end %>
 
-    
+	
 
-    
+	
+    </div>
 </div>
