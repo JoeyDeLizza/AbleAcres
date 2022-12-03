@@ -1,7 +1,9 @@
 <div class="w-full h-screen bg-white px-10 py-10 content-center">
     <div class="flex justify-between border-b pb-8">
         <h2 class="font-semibold text-2xl">Total Cost: $<%= @cart.total %></h2>
-        <a href="#" class="rounded-full bg-green-200 px-2 py-2">Checkout</a>
+	<%= form_with(url: cart_checkout_path) do |f| %>
+	    <%= f.button "Checkout", data: {turbo: false}, type: "submit", class: "rounded-full bg-green-200 px-2 py-2" %>
+	<% end %>
     </div>
     <% @cart.orderables.each do |orderable| %>
         <% product = orderable.product %>
