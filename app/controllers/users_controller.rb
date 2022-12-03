@@ -43,7 +43,6 @@ class UsersController < ApplicationController
     @user_params = params[:user]
     @current_user.FirstName = @user_params[:FirstName]
     @current_user.save
-    puts @current_user.valid?
 
     redirect_to users_path
   end
