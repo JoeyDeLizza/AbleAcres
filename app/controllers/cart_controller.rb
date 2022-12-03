@@ -60,5 +60,6 @@ class CartController < ApplicationController
   end
 
   def success
+    Orderable.delete_all
   end
 end
