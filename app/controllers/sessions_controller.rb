@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: session_params[:email])
     if @user && @user.authenticate(session_params[:password])
       session[:user_id] = @user.id
+      session[:admin] = @user.admin
       if @user.admin == true
         puts "Here"
         redirect_to admin_path
