@@ -197,6 +197,7 @@ GEM
     stimulus-rails (1.1.0)
       railties (>= 6.0.0)
     stringio (3.0.1)
+    stripe (8.0.0)
     strscan (3.0.4)
     tailwindcss-rails (2.0.13-x86_64-linux)
       railties (>= 6.0.0)
@@ -243,6 +244,7 @@ DEPENDENCIES
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails
+  stripe
   tailwindcss-rails (~> 2.0)
   turbo-rails
   tzinfo-data
