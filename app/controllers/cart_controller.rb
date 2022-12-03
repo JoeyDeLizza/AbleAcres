@@ -32,7 +32,7 @@ class CartController < ApplicationController
     # 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
 
 # This is your test secret API key.
-    Stripe.api_key = 'sk_test_51Lzm35C1N3KXwRbw2d1H52zmYhrGAPc6XqKYfg1l7c2bg8a5KntCCFseRfXbzBH3B53ToBLlhwL4suzb62amuThe00OpNrj0fO'
+    Stripe.api_key = #Paste Stripe api code here
     total = @cart.total
     total = total.to_i
     email = current_user.email
