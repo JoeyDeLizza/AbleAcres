@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   post "cart/add"
   post "cart/remove"
   post "cart/update"
+  post "/cart/checkout", t: "cart#checkout"
   # Defines the root path route ("/")
   # root "articles#index"
 end
