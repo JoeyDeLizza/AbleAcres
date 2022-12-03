@@ -37,7 +37,6 @@ class CartController < ApplicationController
     total = total.to_i
     email = current_user.email
     path = 'https://cdn-icons-png.flaticon.com/512/2548/2548670.png'
-    puts path
 
     session = Stripe::Checkout::Session.create({
     line_items: [{
@@ -52,11 +51,14 @@ class CartController < ApplicationController
                  }],
     mode: 'payment',
     customer_email: email,
-    success_url: "http://www.google.com",
-    cancel_url: "http://www.bing.com",
+    success_url: "http://localhost:3000" + cart_success_path,
+    cancel_url: "http://localhost:3000/cart",
     automatic_tax: {enabled: false},
                                                })
     puts session.url
     redirect_to session.url, allow_other_host: true
+  end
+
+  def success
   end
 end
