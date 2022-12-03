@@ -1,4 +1,6 @@
-<div class="w-full h-screen bg-white px-10 py-10 content-center">
+<div class="grid h-screen place-items-center">
+
+    <div class="w-full h-screen bg-white px-10 py-10 content-center">
     <div class="flex justify-between border-b pb-8">
         <h2 class="font-semibold text-2xl">Total Cost: $<%= @cart.total %></h2>
 	<%= form_with(url: cart_checkout_path) do |f| %>
@@ -10,7 +12,7 @@
         <div class="" id="<%= "cart-#{product.id}" %>">
 	    <div class="flex  flex-wrap justify-between hover:bg-gray-100 -mx-8 px-6 py-5">
 
-		<div class="flex w-2/5">
+		<div class="flex">
 
 		    <div class="">
 			<h3 class="font-semibold text-gray-600 text-xs uppercase w-2/5">Product Details</h3>
@@ -48,3 +50,5 @@
 		</div>
         <% end %>
 	    </div>
+    </div>
+</div>

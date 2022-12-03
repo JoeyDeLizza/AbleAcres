@@ -1,3 +1,5 @@
+<div class="grid h-screen place-items-center">
+
 <div class="px-20 py-20 bg-gray-800 rounded-lg">
     <h1 class="pb-8 text-center text-white text-lg font-bold">Upload a Picture</h1>
     <%= form_for @picture, html: {class: "w-full maxw-lg"} do |f| %>
@@ -5,4 +7,5 @@
         <%= f.file_field :image, class: "text-white" %>
         <%= f.submit "Submit", class: "rounded-full bg-blue-200 px-3 py-3 bg-[#F0F0F0]" %>
     <% end %>
+</div>
 </div>
