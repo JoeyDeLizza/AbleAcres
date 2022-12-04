@@ -1,5 +1,6 @@
 class CartController < ApplicationController
   def show
+    render layout: "checkout"
     @render_cart = true
   end
 
@@ -14,7 +15,7 @@ class CartController < ApplicationController
     else
       @cart.orderables.create(product: @product, quantity:)
     end
-    
+    puts Orderable.count
   end
 
   def remove
@@ -29,10 +30,10 @@ class CartController < ApplicationController
 
   def checkout
     puts "here"
-    # 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
+    
 
 # This is your test secret API key.
-    Stripe.api_key = #Paste Stripe api code here
+    Stripe.api_key = "sk_test_51Lzm35C1N3KXwRbw8iBxvZVZZIK1FNaL3zYrNU1qnTSKcPJGaVHLQqX8fVDdYdOQUdu6e0EHXyVZNd2HDYoVeecr00l2hcAOrs"
     total = @cart.total
     total = total.to_i
     email = current_user.email
