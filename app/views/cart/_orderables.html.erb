@@ -1,7 +1,7 @@
-<div class="grid h-screen place-items-center">
+<div class="grid h-full place-items-center">
 
-    <div class="w-full h-screen bg-white px-10 py-10 content-center">
-    <div class="flex justify-between border-b pb-8">
+    <div class="w-full h-full bg-white px-10 py-10 content-center pb-22">
+	<div class="flex justify-between border-b pb-8">
         <h2 class="font-semibold text-2xl">Total Cost: $<%= @cart.total %></h2>
 	<%= form_with(url: cart_checkout_path) do |f| %>
 	    <%= f.button "Checkout", data: {turbo: false}, type: "submit", class: "rounded-full bg-green-200 px-2 py-2" %>
@@ -25,7 +25,7 @@
 			    <span class="text-sm">Unit price: $<%=product.price%></span>
 			    <%= form_with(url: cart_remove_path) do |f| %>
 				<%= f.hidden_field :id, value: orderable.id %>
-				<%= f.submit "Remove", class: "rounded-full bg-red-200 px-1 py-1" %>
+				<%= f.button "Remove", type: "submit", class: "rounded-full bg-red-200 px-1 py-1" %>
 			    <% end %>
 			</div>
 		    </div>
@@ -37,7 +37,7 @@
 			    <%= form_with(url: cart_update_path,  html: {class: "flex flex-col justify-bewteen gap-4"}) do |f| %>
 				<%= f.hidden_field :id, value: product.id %>
 				<%= f.number_field :quantity, value: orderable.quantity, min: 0, max: 10 , class: "w-1/2"%>
-				<%= f.submit "edit", class: "rounded-full bg-blue-200 px-3 py-3" %>
+				<%= f.button "edit", type: "submit", class: "rounded-full bg-blue-200 px-3 py-3" %>
 			    <% end %>
 
 			</div>
