@@ -3,13 +3,13 @@
 
 	<% @products.each do |product| %>
 	    <% if product.pic.attached? %>
-		<div p-20>
+		<div class="">
 
-		    <div class="rounded overflow-hidden shadow-lg max-w-s ">
+		    <div class="rounded overflow-hidden shadow-lg max-w-xs ">
 			<%=image_tag url_for(product.pic), style:"width:300px; height:300px", class: "w-full", alt: "beefpatty" %>
-			<div class="px-6 py-4">
-			    <div class="font-bold text-xl mb-2"> <%= product.name %></div>
-			    <p class="text-gray-700 text-base">
+			<div class="px-6 overflow-hidden py-4">
+			    <div class="font-bold text-xl overflow-hidden mb-2"> <%= product.name %></div>
+			    <p class="text-gray-700 text-base overflow-hidden">
 				<%= product.desc %>
 			    </p>
 			</div>
