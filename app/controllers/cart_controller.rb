@@ -33,7 +33,7 @@ class CartController < ApplicationController
     
 
 # This is your test secret API key.
-    Stripe.api_key = "sk_test_51Lzm35C1N3KXwRbw8iBxvZVZZIK1FNaL3zYrNU1qnTSKcPJGaVHLQqX8fVDdYdOQUdu6e0EHXyVZNd2HDYoVeecr00l2hcAOrs"
+    Stripe.api_key = #"secret key goes here"
     total = @cart.total
     total = total.to_i
     email = current_user.email
