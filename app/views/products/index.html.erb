@@ -19,7 +19,7 @@
 				<%= form_with(url: cart_add_path) do |f|%>
 				    <div class ="flex flex-row-reverse gap-2">
 
-					<%= f.submit "Add", class: "rounded-full bg-gray-200 hover:bg-blue-200 px-3 py-3" %>
+					<%= f.button "Add", type: "submit", class: "rounded-full bg-gray-200 hover:bg-blue-200 px-3 py-3" %>
 					
 					<%= f.hidden_field :id, value: product.id %>
 					<%= f.number_field :quantity, value: 1, min: 1, max: 10, class: "w-1/3" %>
